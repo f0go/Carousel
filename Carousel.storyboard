@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Carousel-->
+        <scene sceneID="SKz-fE-C8V">
+            <objects>
+                <viewController restorationIdentifier="Carousel" storyboardIdentifier="Carousel" id="Nud-h7-v52" customClass="Carousel" customModule="Aviron" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uRd-Y8-D5s"/>
+                        <viewControllerLayoutGuide type="bottom" id="7Sh-Fw-ecW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9XH-al-4NC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.0" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eej-mv-fZW">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="lvT-SB-QDF">
+                                    <size key="itemSize" width="314" height="306"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CarouselCell" reuseIdentifier="CarouselCell" id="VY3-VR-UFL" customClass="CarouselCell" customModule="Aviron" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="147" width="314" height="306"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="314" height="306"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RFT-ih-QQW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="314" height="306"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </imageView>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NNT-ab-cLY">
+                                                    <rect key="frame" x="139" y="134" width="37" height="37"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="RFT-ih-QQW" firstAttribute="top" secondItem="VY3-VR-UFL" secondAttribute="top" id="3Ik-xA-E2y"/>
+                                            <constraint firstItem="NNT-ab-cLY" firstAttribute="centerY" secondItem="VY3-VR-UFL" secondAttribute="centerY" id="Bq9-IP-1rf"/>
+                                            <constraint firstItem="RFT-ih-QQW" firstAttribute="leading" secondItem="VY3-VR-UFL" secondAttribute="leading" id="Wci-q8-UkD"/>
+                                            <constraint firstAttribute="bottom" secondItem="RFT-ih-QQW" secondAttribute="bottom" id="Zu4-Q6-xHk"/>
+                                            <constraint firstAttribute="trailing" secondItem="RFT-ih-QQW" secondAttribute="trailing" id="cIi-wn-KEK"/>
+                                            <constraint firstItem="NNT-ab-cLY" firstAttribute="centerX" secondItem="VY3-VR-UFL" secondAttribute="centerX" id="tvv-lc-8wP"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="image" destination="RFT-ih-QQW" id="Cix-yB-MGH"/>
+                                            <outlet property="spinner" destination="NNT-ab-cLY" id="T8Z-JB-tcm"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="Nud-h7-v52" id="hc8-F1-b5O"/>
+                                    <outlet property="delegate" destination="Nud-h7-v52" id="Bfb-YZ-Q7I"/>
+                                </connections>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ftp-0L-av5">
+                                <rect key="frame" x="556" y="28" width="36" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="M7w-pW-cHh"/>
+                                    <constraint firstAttribute="width" constant="36" id="Win-Bw-ynZ"/>
+                                </constraints>
+                                <state key="normal" image="ico_cerrar"/>
+                                <connections>
+                                    <action selector="close:" destination="Nud-h7-v52" eventType="touchUpInside" id="2kR-E1-hDk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eej-mv-fZW" firstAttribute="top" secondItem="9XH-al-4NC" secondAttribute="top" id="2AO-85-myz"/>
+                            <constraint firstItem="7Sh-Fw-ecW" firstAttribute="top" secondItem="eej-mv-fZW" secondAttribute="bottom" id="Cjf-vj-QkZ"/>
+                            <constraint firstItem="ftp-0L-av5" firstAttribute="top" secondItem="uRd-Y8-D5s" secondAttribute="bottom" constant="8" id="HZ1-Ky-VvT"/>
+                            <constraint firstAttribute="trailing" secondItem="eej-mv-fZW" secondAttribute="trailing" id="Iq3-vv-7dA"/>
+                            <constraint firstAttribute="trailing" secondItem="ftp-0L-av5" secondAttribute="trailing" constant="8" id="JJ7-ET-1Lw"/>
+                            <constraint firstItem="eej-mv-fZW" firstAttribute="leading" secondItem="9XH-al-4NC" secondAttribute="leading" id="tib-pF-i9q"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collection" destination="eej-mv-fZW" id="SoD-lu-iYv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jXz-jZ-iwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730" y="38"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ico_cerrar" width="27" height="27"/>
+    </resources>
+</document>
